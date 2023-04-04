@@ -1,0 +1,24 @@
+# Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
+
+_pkgname='cnv'
+pkgname="$_pkgname-git"
+pkgver='1.0.0'
+pkgrel='1'
+url="https://github.com/Ramenu/$_pkgname"
+pkgdesc="Terminal unit conversion program"
+arch=('x86_64')
+makedepends=('quikc')
+license=('GPL3')
+source=("$_pkgname::git+$url.git")
+b2sums=('SKIP')
+
+build() {
+	cd "$_pkgname"
+	quikc
+}
+
+package() {
+	cd "$_pkgname"
+	install -Dm755 ./cnv -t "$pkgdir/usr/bin/"
+}
+
