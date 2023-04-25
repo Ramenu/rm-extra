@@ -8,16 +8,18 @@ url="https://github.com/Ramenu/$_pkgname"
 pkgdesc="A simple Arch Linux news reader"
 arch=('x86_64')
 makedepends=('go>=1.19')
+depends=('curl')
 license=('GPL3')
 source=("$_pkgname::git+$url.git")
 b2sums=('SKIP')
 
 build() {
 	cd "$_pkgname"
-	go build .
+	go build -ldflags='-s -w' .
 }
 
 package() {
 	cd "$_pkgname"
 	install -Dm755 ./paccheck -t "$pkgdir/usr/bin/"
+	install -Dm755 ./paccheck-parse "$pkgdir/usr/bin/"
 }
