@@ -1,7 +1,7 @@
 # Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
 
 pkgname="paccheck"
-pkgver='1.0.2'
+pkgver='1.0.3'
 pkgrel='1'
 url="https://github.com/Ramenu/$pkgname"
 pkgdesc="A simple Arch Linux news reader"
