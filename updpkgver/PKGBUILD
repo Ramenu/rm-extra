@@ -1,0 +1,26 @@
+# Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
+
+pkgname='updpkgver'
+pkgver='1.0.0'
+pkgrel='1'
+url="https://github.com/Ramenu/$pkgname"
+pkgdesc='Automatically updates package versions to the newest release'
+arch=('any')
+makedepends=('git')
+depends=('python>=3')
+license=('MIT')
+source=("https://github.com/Ramenu/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
+b2sums=('4bfa8359b6dff4a424301065f66fdec235367a8cf02783b23cf0c1e6de11362d58f8c7aa011286f9ad548440a48e527751bd5b4af6e4588645d17ccd7413724c')
+
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+	pkg_directory="$pkgdir/opt/$pkgname"
+	mkdir -p "$pkg_directory"
+	install -Dm755 ./updpkgver.py -t "$pkg_directory"
+	install -Dm644 ./srcinfo.py -t "$pkg_directory"
+	install -Dm644 ./log.py -t "$pkg_directory"
+	install -Dm644 ./common.py -t "$pkg_directory"
+	install -Dm644 ./api.py -t "$pkg_directory"
+	ln -sf "$pkgdir/usr/bin/updpkgver" "$pkg_directory/updpkgver.py"
+}
+
