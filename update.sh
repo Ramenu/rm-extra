@@ -34,8 +34,11 @@ for dir in *; do
 		# Does this package have no updates available?
 		# If not, skip it
 		if [[ "$(python ./checkpkgs.py "$dir")" != *'requires an update'* ]]; then
-			echo "No updates available for ${dir}, skipping"
-			continue
+			# If there are no database files in the directory, then an update is mandatory
+			if ls ${dir}/*.pkg.tar.zst 1> /dev/null 2>&1; then
+				echo "No updates available for ${dir}, skipping"
+				continue
+			fi
 		fi
 
 		cd ./"$dir"
@@ -52,7 +55,7 @@ for dir in *; do
 		
 		# Remove all outdated packages
 		echo Removing all packages from "$dir"
-		rm ./*.pkg.tar.zst > /dev/null 2>&1
+		rm ./*.pkg.tar.zst
 
 		echo Executing makepkg for "$dir"
 		makepkg -f || exit

@@ -5,7 +5,7 @@ pkgver='1.0.1'
 pkgrel='1'
 url="https://github.com/Ramenu/$pkgname"
 pkgdesc='Automatically updates package versions to the newest release'
-arch=('any')
+arch=('x86_64')
 makedepends=('git')
 depends=('python>=3')
 license=('MIT')
