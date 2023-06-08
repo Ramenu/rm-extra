@@ -1,7 +1,7 @@
 # Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
 
 pkgname='updpkgver'
-pkgver='1.0.0'
+pkgver='1.0.1'
 pkgrel='1'
 url="https://github.com/Ramenu/$pkgname"
 pkgdesc='Automatically updates package versions to the newest release'
@@ -10,7 +10,7 @@ makedepends=('git')
 depends=('python>=3')
 license=('MIT')
 source=("https://github.com/Ramenu/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
-b2sums=('4bfa8359b6dff4a424301065f66fdec235367a8cf02783b23cf0c1e6de11362d58f8c7aa011286f9ad548440a48e527751bd5b4af6e4588645d17ccd7413724c')
+b2sums=('eb87e24e20092b99b37646e9348c2b8ad5f1a094aba8d93f87b31bb092f71bacbaf6d08f06a02607f2e06db2b18daadc22eb7b1fec24da60f89370f85706e878')
 
 package() {
 	cd "$srcdir/$pkgname-$pkgver"
