@@ -33,7 +33,7 @@ for dir in *; do
 
 		# Does this package have no updates available?
 		# If not, skip it
-		if [[ "$(python ./checkpkgs.py "$dir")" == *'requires an update'* ]]; then
+		if [[ "$(python ./checkpkgs.py "$dir")" != *'requires an update'* ]]; then
 			echo "No updates available for ${dir}, skipping"
 			continue
 		fi
