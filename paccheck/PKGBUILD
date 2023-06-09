@@ -1,9 +1,10 @@
 # Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
 
-pkgname="paccheck"
-pkgver='1.0.3'
-pkgrel='1'
-url="https://github.com/Ramenu/$pkgname"
+_pkgname='paccheck'
+pkgname="$_pkgname-git"
+pkgver=r23.5b38c63
+pkgrel=1
+url="https://github.com/Ramenu/$_pkgname"
 pkgdesc="A simple Arch Linux news reader"
 arch=('x86_64')
 makedepends=('go>=1.19')
@@ -11,12 +12,20 @@ license=('GPL3')
 source=("$pkgname::git+$url.git")
 b2sums=('SKIP')
 
+pkgver() {
+	( 
+		set -o pipefail
+		git describe --long --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+		printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+    )
+}
+
 build() {
-	cd "$pkgname"
+	cd "$_pkgname"
 	go build -ldflags='-s -w' .
 }
 
 package() {
-	cd "$pkgname"
+	cd "$_pkgname"
 	install -Dm755 ./paccheck -t "$pkgdir/usr/bin/"
 }

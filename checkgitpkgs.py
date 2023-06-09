@@ -30,8 +30,10 @@ def pkgNeedsUpdate(pkgName : str, rm_extra_pushed_at : str) -> bool:
         return repo_pushed_at > rm_extra_pushed_at
     except urllib.error.HTTPError as err:
         print(f'HTTPError: {err.code}')
+        exit(1)
     except urllib.error.URLError as err:
         print(f'URLError: {err.reason}')
+        exit(1)
 
 if __name__ == '__main__':
     try:
