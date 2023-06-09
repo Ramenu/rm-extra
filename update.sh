@@ -22,6 +22,8 @@ for arch in "${archs[@]}"; do
 	fi
 done
 
+update_occurred=0
+
 for dir in *; do
 	is_arch=$(is_architecture "$dir")
 	if [[ ! "$is_arch" ]]; then
@@ -41,6 +43,7 @@ for dir in *; do
 			fi
 		fi
 
+		update_occurred=1
 		cd ./"$dir"
 
 		# Convert the package's compatible architectures
@@ -105,8 +108,9 @@ for arch in "${archs[@]}"; do
 	cd ..
 done
 
-git config user.name 'Bot'
-git config user.email 'bot@bot.com'
-git add .
-git commit -m 'Autoupdate'
-git push origin master
+
+if [[ "$update_occurred" -eq 1 ]]; then
+	git add .
+	git -c 'user.name=Bot' -c 'user.email=bob@bot.com' commit -m 'Autoupdate'
+	git push origin master
+fi
