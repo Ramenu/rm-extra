@@ -104,3 +104,9 @@ for arch in "${archs[@]}"; do
 	mv ./"$REPO_NAME".files.tar.gz ./"$REPO_NAME".files
 	cd ..
 done
+
+git config user.name 'Bot'
+git config user.email 'bot@bot.com'
+git add .
+git commit -m 'Autoupdate'
+git push origin master
