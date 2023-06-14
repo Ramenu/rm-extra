@@ -2,7 +2,7 @@
 
 _pkgname='paccheck'
 pkgname="$_pkgname-git"
-pkgver=r23.5b38c63
+pkgver=r27.fcc406e
 pkgrel=1
 url="https://github.com/Ramenu/$_pkgname"
 pkgdesc="A simple Arch Linux news reader"
