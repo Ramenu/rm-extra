@@ -56,6 +56,11 @@ for dir in *; do
 			}
 			' ./PKGBUILD) )
 		
+		for arch in "${pkg_archs[@]}"; do
+			echo "Removing existing $dir packages in $arch..."
+			rm ../"$arch"/"$dir"*.pkg.tar.zst > /dev/null 2>&1
+		done
+
 		# Remove all outdated packages
 		echo Removing all packages from "$dir"
 		rm ./*.pkg.tar.zst > /dev/null 2>&1
@@ -71,7 +76,7 @@ for dir in *; do
 		updpkgsums
 
 		echo Updating \'./.SRCINFO\'
-		makepkg --printsrcinfo > './SRCINFO'
+		makepkg --printsrcinfo > './.SRCINFO'
 		echo Executing makepkg for "$dir"
 		makepkg -f || exit
 
