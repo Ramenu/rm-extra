@@ -7,7 +7,7 @@ pkgrel=1
 url="https://github.com/Ramenu/$_pkgname"
 pkgdesc="A simple Arch Linux news reader"
 arch=('x86_64')
-makedepends=('go>=1.19')
+makedepends=('go>=1.19' 'git')
 license=('GPL3')
 source=("$pkgname::git+$url.git")
 b2sums=('SKIP')
