@@ -38,7 +38,7 @@ for dir in *; do
 		if [[ "$(updpkgver ./"$dir" --dont-update)" != *'Update available for'* ]]; then
 			# If there are no database files in the directory, then an update is mandatory
 			if ls ${dir}/*.pkg.tar.zst 1> /dev/null 2>&1; then
-				echo "No updates available for ${dir}, skipping"
+				echo "No updates available for ${dir}, skipping..."
 				continue
 			fi
 		fi
