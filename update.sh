@@ -100,7 +100,7 @@ for arch in "${archs[@]}"; do
 	cd ./"$arch" || exit
 
 	if [[ -z "$(ls ./)" ]]; then
-		echo No files found in "$arch"... Skipping
+		echo No files found in "$arch", skipping...
 		cd ..
 		continue
 	fi
@@ -116,6 +116,6 @@ done
 
 if [[ "$update_occurred" -eq 1 ]]; then
 	git add .
-	git -c 'user.name=Bot' -c 'user.email=bob@bot.com' commit -m 'Autoupdate'
+	git -c 'user.name=Bot' -c 'user.email=bot@bot.com' commit -m 'Autoupdate'
 	git push origin master
 fi
