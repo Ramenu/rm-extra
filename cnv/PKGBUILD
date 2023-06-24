@@ -2,7 +2,7 @@
 
 _pkgname='cnv'
 pkgname="$_pkgname-git"
-pkgver=r6.9b4510e
+pkgver=r8.afd7894
 pkgrel=1
 url="https://github.com/Ramenu/$_pkgname"
 pkgdesc="Terminal unit conversion program"
