@@ -2,6 +2,7 @@
 
 REPO_NAME='rm-extra'
 archs=('x86_64' 'i686' 'pentium4' 'armv7h' 'aarch64' 'any')
+access_token=$(cat ./token)
 
 is_architecture() {
 	for arch in "${archs[@]}"; do
@@ -35,7 +36,7 @@ for dir in *; do
 
 		# Does this package have no updates available?
 		# If not, skip it
-		if [[ "$(updpkgver ./"$dir" --dont-update)" != *'Update available for'* ]]; then
+		if [[ "$(updpkgver ./"$dir" --dont-update -t "$access_token")" != *'Update available for'* ]]; then
 			# If there are no database files in the directory, then an update is mandatory
 			if ls ${dir}/*.pkg.tar.zst 1> /dev/null 2>&1; then
 				echo "No updates available for ${dir}, skipping..."

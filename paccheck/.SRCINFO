@@ -1,0 +1,13 @@
+pkgbase = paccheck-git
+	pkgdesc = A simple Arch Linux news reader
+	pkgver = r32.a8fd8ce
+	pkgrel = 1
+	url = https://github.com/Ramenu/paccheck
+	arch = x86_64
+	license = GPL3
+	makedepends = go>=1.19
+	makedepends = git
+	source = paccheck-git::git+https://github.com/Ramenu/paccheck.git
+	b2sums = SKIP
+
+pkgname = paccheck-git

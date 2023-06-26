@@ -1,0 +1,13 @@
+pkgbase = cnv-git
+	pkgdesc = Terminal unit conversion program
+	pkgver = r6.9b4510e
+	pkgrel = 1
+	url = https://github.com/Ramenu/cnv
+	arch = x86_64
+	license = GPL3
+	makedepends = quikc-git
+	makedepends = git
+	source = cnv::git+https://github.com/Ramenu/cnv.git
+	b2sums = SKIP
+
+pkgname = cnv-git

@@ -1,0 +1,13 @@
+pkgbase = autolicense-git
+	pkgdesc = Automatically insert license boilerplate into source code files
+	pkgver = r37.c250f74
+	pkgrel = 1
+	url = https://github.com/Ramenu/autolicense
+	arch = x86_64
+	license = GPL3
+	makedepends = go>=1.19
+	makedepends = git
+	source = autolicense-git::git+https://github.com/Ramenu/autolicense.git
+	b2sums = SKIP
+
+pkgname = autolicense-git

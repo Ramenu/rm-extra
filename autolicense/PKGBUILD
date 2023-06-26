@@ -1,0 +1,26 @@
+# Maintainer: Abdur-Rahman Mansoor <mansoorar at proton dot me>
+
+_pkgname='autolicense'
+pkgname="$_pkgname-git"
+pkgver=r37.c250f74
+pkgrel=1
+url="https://github.com/Ramenu/$_pkgname"
+pkgdesc='Automatically insert license boilerplate into source code files'
+arch=('x86_64')
+makedepends=('go>=1.19' 'git')
+license=('GPL3')
+source=("$pkgname::git+$url.git")
+b2sums=('SKIP')
+pkgver() {
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+build() {
+	cd "$pkgname"
+	go build -ldflags='-s -w' .
+}
+
+package() {
+	cd "$pkgname"
+	install -Dm755 ./autolicense -t "$pkgdir/usr/bin/"
+}

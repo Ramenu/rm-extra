@@ -1,5 +1,7 @@
 /*/*
+/token
 !/*/PKGBUILD
+!/*/.SRCINFO
 !/aarch64/*
 !/armv7h/*
 !/any/*

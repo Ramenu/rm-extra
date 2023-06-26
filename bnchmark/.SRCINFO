@@ -1,0 +1,12 @@
+pkgbase = bnchmark-git
+	pkgdesc = A tool for benchmarking program execution time
+	pkgver = r3.853eb09
+	pkgrel = 1
+	url = https://github.com/Ramenu/bnchmark
+	arch = x86_64
+	license = GPL3
+	makedepends = cargo
+	source = bnchmark::git+https://github.com/Ramenu/bnchmark.git
+	b2sums = SKIP
+
+pkgname = bnchmark-git
