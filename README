@@ -1,5 +1,4 @@
-This repository stores Arch Linux packages maintained by me. There are a couple of reasons why I host my own repository instead of uploading
-them to the AUR.
+This repository stores Arch Linux packages maintained by me. There are a couple of reasons why I host my own repository instead of uploading them to the AUR.
 
 	1) Avoiding redundancy. Some AUR packages are outdated and their maintainer hasn't updated
 	   them in years. Unfortunately, these packages aren't orphaned so I can't maintain them either.
