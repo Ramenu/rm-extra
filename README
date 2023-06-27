@@ -1,0 +1,11 @@
+This repository stores Arch Linux packages maintained by me. There are a couple of reasons why I host my own repository instead of uploading
+them to the AUR.
+
+	1) Avoiding redundancy. Some AUR packages are outdated and their maintainer hasn't updated
+	   them in years. Unfortunately, these packages aren't orphaned so I can't maintain them either.
+	   So whatever software is outdated on the AUR I take it upon myself to update it myself.
+
+	2) Hosting my own obscure packages. I don't like wasting precious storage space, even if
+	   it's only equivalant to 1KB of disk space, only for myself. It's selfish and ruins the
+	   purpose of the AUR. If there are people who find my software useful, please let me know
+	   and I would be happy to upload it there.
