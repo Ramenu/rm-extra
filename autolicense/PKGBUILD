@@ -2,7 +2,7 @@
 
 _pkgname='autolicense'
 pkgname="$_pkgname-git"
-pkgver=r37.c250f74
+pkgver=r38.8b097f3
 pkgrel=1
 url="https://github.com/Ramenu/$_pkgname"
 pkgdesc='Automatically insert license boilerplate into source code files'

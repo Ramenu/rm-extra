@@ -1,6 +1,6 @@
 pkgbase = autolicense-git
 	pkgdesc = Automatically insert license boilerplate into source code files
-	pkgver = r37.c250f74
+	pkgver = r38.8b097f3
 	pkgrel = 1
 	url = https://github.com/Ramenu/autolicense
 	arch = x86_64
